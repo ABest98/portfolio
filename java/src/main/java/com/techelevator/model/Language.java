@@ -6,16 +6,16 @@ public class Language {
 
     private int langId;
     private String langName;
-    private String langDesc;
+    private int langProf;
 
     public Language() {
         
     }
 
-    public Language(int langId, String langName, String langDesc) {
+    public Language(int langId, String langName, int langProf) {
         this.langId = langId;
         this.langName = langName;
-        this.langDesc = langDesc;
+        this.langProf = langProf;
     }
 
     public int getLangId() {
@@ -34,12 +34,12 @@ public class Language {
         this.langName = langName;
     }
 
-    public String getLangDesc() {
-        return langDesc;
+    public int getLangProf() {
+        return langProf;
     }
 
-    public void setLangDesc(String langDesc) {
-        this.langDesc = langDesc;
+    public void setLangProf(int langProf) {
+        this.langProf = langProf;
     }
 
     @Override
@@ -47,12 +47,12 @@ public class Language {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Language language = (Language) o;
-        return langId == language.langId && Objects.equals(langName, language.langName) && Objects.equals(langDesc, language.langDesc);
+        return langId == language.langId && langProf == language.langProf && Objects.equals(langName, language.langName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(langId, langName, langDesc);
+        return Objects.hash(langId, langName, langProf);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class Language {
         return "Language{" +
                 "langId=" + langId +
                 ", langName='" + langName + '\'' +
-                ", langDesc='" + langDesc + '\'' +
+                ", langProf=" + langProf +
                 '}';
     }
 }
