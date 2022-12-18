@@ -16,7 +16,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.techelevator.dao.UserDao;
 import com.techelevator.model.security.LoginDTO;
 import com.techelevator.model.security.RegisterUserDTO;
-import com.techelevator.model.User;
 import com.techelevator.model.security.UserAlreadyExistsException;
 import com.techelevator.security.jwt.JWTFilter;
 import com.techelevator.security.jwt.TokenProvider;

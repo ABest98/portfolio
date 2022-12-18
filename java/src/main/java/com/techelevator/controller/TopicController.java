@@ -1,8 +1,6 @@
 package com.techelevator.controller;
 
 import com.techelevator.dao.*;
-import com.techelevator.model.PassedObject;
-import com.techelevator.model.SubTopic;
 
 import com.techelevator.model.Topic;
 import org.springframework.web.bind.annotation.*;
