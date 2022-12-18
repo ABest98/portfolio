@@ -7,4 +7,5 @@ import java.util.List;
 public interface LanguageDao {
 
     List<Language> getAllLanguages();
+    Language getSpecificLanguage(int id);
 }

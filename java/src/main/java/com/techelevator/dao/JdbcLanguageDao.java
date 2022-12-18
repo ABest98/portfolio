@@ -33,6 +33,22 @@ public class JdbcLanguageDao implements LanguageDao {
         return allLanguages;
     }
 
+    @Override
+    public Language getSpecificLanguage(int id) {
+        Language language = new Language();
+
+        String sql = "SELECT lang_id, lang_name, proficiency FROM languages " +
+                     "WHERE lang_id = ?";
+
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, id);
+
+        if(rowSet.next()) {
+            language = mapRowToLanguage(rowSet);
+        }
+
+        return language;
+    }
+
     private Language mapRowToLanguage(SqlRowSet rowSet) {
         Language language = new Language();
 

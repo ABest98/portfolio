@@ -33,6 +33,22 @@ public class JdbcProjectDao implements ProjectDao {
         return allProjects;
     }
 
+    @Override
+    public Project getSpecificProject(int id) {
+        Project project = new Project();
+
+        String sql = "SELECT project_id, project_name, project_description FROM project " +
+                     "WHERE project_id = ?";
+
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, id);
+
+        if(rowSet.next()) {
+            project = mapRowToProject(rowSet);
+        }
+
+        return project;
+    }
+
     private Project mapRowToProject(SqlRowSet rowSet) {
         Project project = new Project();
 
