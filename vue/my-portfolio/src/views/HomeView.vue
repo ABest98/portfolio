@@ -1,20 +1,23 @@
 <template>
   <div class="home">
     <IntroHello />
+    <SideBar />
   </div>
 </template>
 
 <script>
 import IntroHello from '@/components/IntroHello.vue'
+import SideBar from '@/components/SideBar.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    IntroHello
+    IntroHello,
+    SideBar
   }
 }
 </script>
-<style>
+<style lang="scss">
 div.home {
   display: flex;
   flex-direction: row;
