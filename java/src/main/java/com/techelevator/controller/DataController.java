@@ -53,7 +53,12 @@ public class DataController {
 
     @RequestMapping(path = "/alex/languages/{id}", method = RequestMethod.GET)
     public Language getSpecificLanguage(@PathVariable int id) {
-        return languageDao.getSpecificLanguage(id);
+        Language language = languageDao.getSpecificLanguage(id);
+        if(language == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Language not found");
+        } else {
+            return language;
+        }
     }
 
 }
