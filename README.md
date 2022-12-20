@@ -1,4 +1,4 @@
-# Potfolio Page
+# Portfolio Page
 
 This is a passion project that started before I joined tech elevator and now that I've graduated from Tech Elevator I felt like it would only be right that my first project after would be a portfolio page.
 
