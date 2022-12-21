@@ -8,6 +8,7 @@
 </template>
 
 <style lang="scss">
+@import "styles/base";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -20,7 +21,7 @@
 }
 
 html {
-   background: black;
+   background: $Yoon-5;
 }
 
 nav {

@@ -1,9 +1,10 @@
 <template>
   <div id="hello">
     <div class="intro">
-      <img src="../assets/Me.jpg" alt="">
-      <h1>Hello World</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+      <p>Hi, my name is</p>
+      <h1>Alex Best.</h1>
+      <p class="bio">An aspiring fullstack developer</p>
+      <p>Junior Software Developer with a strong strategic, adaptable, and determined background, eager to mature technical skill-sets while utilizing diverse professional experience to support and innovate your organization.</p>
     </div>
   </div>
 </template>
@@ -20,42 +21,33 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background: linear-gradient(45deg, $PKP-3-rgba, $PKP-1-rgba, $PKP-4-rgba);
+    background: none;
+    box-shadow: 0px 0px 25px $Opera-3,
+                0px 0px 10px $Yoon-3;
     width: 50vw;
     height: 50vh;
     align-items: center;
-    border-radius: 30px 60px;
-    border: solid red 5px;
+    border-radius: 20px 90px;
+    color: $Yoon-1;
   }
   div.intro {
-    display: grid;
-    grid-template-areas: 'pic name name'
-                         'par par par';
-    grid-template-columns: .5fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    img {
-      width: 150px;
-      height: 150px;
-      grid-area: pic;
-      border-radius: 2rem;
-      margin-left: 1rem;
-      border: 5px solid red;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     h1 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: $base-font-size * 2;
-      grid-area: name;
-      border: 5px solid red;
-      margin-left: 1rem;
-      margin-right: 1rem;
+      margin: $base-margin;
+      font-size: 2.5rem;
+      color: $Yoon-2;
     }
     p {
-      grid-area: par;
-      margin-right: 1rem;
-      margin-left: 1rem;
-      border: 5px solid red;
+      margin: $base-margin;
+      font-size: 1rem;
+      text-align: start;
+      color: $Opera-2;
+    }
+    p.bio {
+      font-size: 2rem;
+      color: $Yoon-3;
     }
   }
 </style>
