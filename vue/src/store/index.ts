@@ -7,7 +7,6 @@ interface Project {
   projectId: number,
   projectName: String,
   projectDesc: String,
-
 }
 
 export default new Vuex.Store({

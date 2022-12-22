@@ -40,12 +40,15 @@ export default {
       document.getElementById('side-bar').style.boxShadow = '0px 0px 25px rgba(114,26,26, 1), 0px 0px 10px rgba(89,89,89, 1)'
     },
     getProjects () {
-      ProjectService.getProjects().then(response => {
-        console.log(response)
-        response.data.forEach(element => {
-          this.$store.commit('SAVE_PROJECT', element)
-        })
-      }).catch(error => console.error(error))
+      if (this.$store.state.projectObj.length < 2) {
+        ProjectService.getProjects().then(response => {
+          console.log(response)
+          response.data.forEach(element => {
+            this.$store.commit('SAVE_PROJECT', element)
+          })
+          this.$store.state.projectObj.shift()
+        }).catch(error => console.error(error))
+      }
     }
   }
 }

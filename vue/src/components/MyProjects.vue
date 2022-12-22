@@ -1,6 +1,5 @@
 <template>
   <div id="project">
-    <p>Something</p>
     <ProjectCard />
   </div>
 </template>
@@ -25,7 +24,7 @@ export default {
     box-shadow: 0px 0px 25px $Logpass-3,
                 0px 0px 10px $Yoon-3;
     width: 50vw;
-    height: 50vh;
+    height: 1000px;
     align-items: center;
     border-radius: 20px 90px;
     color: $Yoon-1;
