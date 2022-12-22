@@ -2,7 +2,7 @@
   <div id="side-bar">
     <button class='btn' v-on:click='original()' type="button">Intro</button>
     <button class='btn' v-on:click='changeColorBlue()' type="button">About Me</button>
-    <button class='btn' v-on:click='changeColorGreen()' type="button">Projects</button>
+    <button class='btn' v-on:click='changeColorGreen(), getProjects()' type="button">Projects</button>
     <button class='btn' v-on:click='changeColorPurple()' type="button">Languages</button>
     <button class='btn' type="button">Experience</button>
     <button class='btn' type="button">Contact Me</button>
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import ProjectService from '@/services/ProjectService'
 export default {
 
   methods: {
@@ -37,6 +38,14 @@ export default {
     },
     revert () {
       document.getElementById('side-bar').style.boxShadow = '0px 0px 25px rgba(114,26,26, 1), 0px 0px 10px rgba(89,89,89, 1)'
+    },
+    getProjects () {
+      ProjectService.getProjects().then(response => {
+        console.log(response)
+        response.data.forEach(element => {
+          this.$store.commit('SAVE_PROJECT', element)
+        })
+      }).catch(error => console.error(error))
     }
   }
 }

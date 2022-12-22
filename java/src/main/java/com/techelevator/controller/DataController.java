@@ -12,8 +12,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
-@CrossOrigin
 @RestController
+@CrossOrigin
 public class DataController {
 
     private LanguageDao languageDao;
@@ -31,12 +31,12 @@ public class DataController {
         return meDao.GetMe();
     }
 
-    @RequestMapping(path = "/alex/project", method = RequestMethod.GET)
+    @RequestMapping(path = "/project", method = RequestMethod.POST)
     public List<Project> getProjects() {
         return projectDao.getAllProjects();
     }
 
-    @RequestMapping(path = "/alex/project/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/project/{id}", method = RequestMethod.GET)
     public Project getSpecificProject(@PathVariable int id) {
         Project project = projectDao.getSpecificProject(id);
         if(project == null) {
@@ -46,12 +46,12 @@ public class DataController {
         }
     }
 
-    @RequestMapping(path = "/alex/languages", method = RequestMethod.GET)
+    @RequestMapping(path = "/languages", method = RequestMethod.GET)
     public List<Language> getLanguages() {
         return languageDao.getAllLanguages();
     }
 
-    @RequestMapping(path = "/alex/languages/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/languages/{id}", method = RequestMethod.GET)
     public Language getSpecificLanguage(@PathVariable int id) {
         Language language = languageDao.getSpecificLanguage(id);
         if(language == null) {
