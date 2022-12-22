@@ -1,0 +1,40 @@
+<template>
+  <div id="project">
+    <p>Something</p>
+  </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style lang="scss">
+@import "../styles/base";
+
+  div#project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: none;
+    box-shadow: 0px 0px 25px $Logpass-3,
+                0px 0px 10px $Yoon-3;
+    width: 50vw;
+    height: 50vh;
+    align-items: center;
+    border-radius: 20px 90px;
+    color: $Yoon-1;
+    animation: fadeIn 1s;
+
+    @keyframes fadeIn {
+      from{
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+</style>

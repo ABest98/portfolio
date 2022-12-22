@@ -21,7 +21,7 @@
 }
 
 html {
-   background: $Yoon-5;
+   background: linear-gradient(45deg ,$Energy-1, $Energy-2, $Yoon-5);
 }
 
 nav {
@@ -36,4 +36,5 @@ nav {
     }
   }
 }
+
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div id="side-bar">
+    <button class='btn' v-on:click='original()' type="button">Intro</button>
     <button class='btn' v-on:click='changeColorBlue()' type="button">About Me</button>
     <button class='btn' v-on:click='changeColorGreen()' type="button">Projects</button>
     <button class='btn' v-on:click='changeColorPurple()' type="button">Languages</button>
@@ -10,23 +11,25 @@
 
 <script>
 export default {
-  isBlue: false,
-  isGreen: false,
-  isPurple: false,
+
   methods: {
+    original () {
+      document.getElementById('side-bar').style.boxShadow = '0px 0px 25px rgba(114,26,26, 1), 0px 0px 10px rgba(89,89,89, 1)'
+      this.$store.state.aboutMe = false
+      this.$store.state.projects = false
+      this.$store.state.homePage = true
+    },
     changeColorBlue () {
-      if (this.isBlue === false) {
-        document.getElementById('side-bar').style.boxShadow = '0px 0px 25px rgba(114,55,242, 1), 0px 0px 10px rgba(89,89,89, 1)'
-        document.getElementById('hello').style.boxShadow = '0px 0px 25px rgba(114,55,242, 1), 0px 0px 10px rgba(89,89,89, 1)'
-        this.isBlue = true
-      } else {
-        this.revert()
-        this.isBlue = false
-      }
+      document.getElementById('side-bar').style.boxShadow = '0px 0px 25px rgba(114,55,242, 1), 0px 0px 10px rgba(89,89,89, 1)'
+      this.$store.state.aboutMe = true
+      this.$store.state.projects = false
+      this.$store.state.homePage = false
     },
     changeColorGreen () {
       document.getElementById('side-bar').style.boxShadow = '0px 0px 25px rgba(21,191,128, 1), 0px 0px 10px rgba(89,89,89, 1)'
-      document.getElementById('hello').style.boxShadow = '0px 0px 25px rgba(21,191,128, 1), 0px 0px 10px rgba(89,89,89, 1)'
+      this.$store.state.projects = true
+      this.$store.state.aboutMe = false
+      this.$store.state.homePage = false
     },
     changeColorPurple () {
       document.getElementById('side-bar').style.boxShadow = '0px 0px 25px rgba(9,13,89, 1), 0px 0px 10px rgba(89,89,89, 1)'
@@ -34,7 +37,6 @@ export default {
     },
     revert () {
       document.getElementById('side-bar').style.boxShadow = '0px 0px 25px rgba(114,26,26, 1), 0px 0px 10px rgba(89,89,89, 1)'
-      document.getElementById('hello').style.boxShadow = '0px 0px 25px rgba(114,26,26, 1), 0px 0px 10px rgba(89,89,89, 1)'
     }
   }
 }
