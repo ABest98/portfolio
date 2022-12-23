@@ -38,6 +38,24 @@ export default {
         opacity: 1;
       }
     }
+
+    @media screen and (max-width: $small-width) and (max-height: $small-height) {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      box-shadow: none !important;
+      margin: 0;
+      width: 300px;
+      height: 300px;
+    }
+
+    @media screen and (min-width: $med-width) and (min-height: $med-height) {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 55vw;
+      height: 90vh;
+    }
   }
 
 </style>

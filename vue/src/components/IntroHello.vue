@@ -39,6 +39,22 @@ export default {
         opacity: 1;
       }
     }
+
+    @media screen and (max-width: $small-width) and (max-height: $small-height) {
+      width: 350px;
+      height: 250px;
+      box-shadow: none !important;
+
+      div.intro {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 15%;
+
+        p.intro-bio {
+          font-size: 1rem;
+        }
+      }
+    }
   }
   div.intro {
     display: flex;

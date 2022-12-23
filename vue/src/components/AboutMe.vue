@@ -51,6 +51,24 @@ export default {
       margin: 0 30px 0 30px;
       text-align: start;
     }
+
+    @media screen and (max-width: $small-width) and (max-height: $small-height) {
+      flex-direction: row;
+      justify-content: center;
+      align-content: flex-start;
+      flex-wrap: wrap;
+      width: 300px;
+      height: 400px;
+      box-shadow: none !important;
+
+      h1 {
+        text-decoration: underline;
+      }
+
+      img {
+        display: none;
+      }
+    }
   }
 
 </style>

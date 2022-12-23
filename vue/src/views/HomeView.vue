@@ -26,10 +26,19 @@ export default class HomeView extends Vue {}
 </script>
 
 <style lang="scss">
+@import "../styles/base";
+
 div.home {
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  @media screen and (max-width: $small-width) and (max-height: $small-height) {
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 </style>

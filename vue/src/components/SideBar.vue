@@ -78,12 +78,17 @@ div#side-bar {
                 0px 0px 5px $Yoon-3;
   }
 
-  .btn:hover {
-    width: 7rem;
-    height: 2rem;
-    background: rgba(26,55,140, .5);
-    box-shadow: 0px 0px 15px $PKP-3,
-                0px 0px 5px $Yoon-3;
+  @media screen and (max-width: $small-width) and (max-height: $small-height) {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 300px;
+    box-shadow: none !important;
+    margin-left: 10px;
+
+    .btn {
+      margin-bottom: 10px;
+    }
   }
 }
 </style>
