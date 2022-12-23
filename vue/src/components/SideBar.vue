@@ -42,7 +42,6 @@ export default {
     getProjects () {
       if (this.$store.state.projectObj.length < 2) {
         ProjectService.getProjects().then(response => {
-          console.log(response)
           response.data.forEach(element => {
             this.$store.commit('SAVE_PROJECT', element)
           })
